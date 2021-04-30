@@ -31,7 +31,7 @@ class AuthController extends CI_Controller
 
         if ($auth > 0) {
             $userdata = [
-                'login' => true,
+                'login' => 'admin',
                 'username' => $username,
                 'password' => $password
             ];
