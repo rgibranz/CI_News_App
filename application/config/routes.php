@@ -56,5 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 // admin Login Routes
 $route['admin/login'] = 'authController/adminLogin';
 $route['admin/auth'] = 'authController/adminAuth';
+$route['admin/logout'] = 'authController/adminLogout';
 // admin dashboard Routes
 $route['admin'] = 'admin/dashboard';

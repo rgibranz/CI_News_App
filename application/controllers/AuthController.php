@@ -46,4 +46,10 @@ class AuthController extends CI_Controller
             redirect('admin/login');
         }
     }
+
+	public function adminLogout()
+	{		
+		$this->session->sess_destroy();
+		redirect('admin/login');
+	}
 }
