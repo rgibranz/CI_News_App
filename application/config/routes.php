@@ -60,3 +60,4 @@ $route['admin/logout'] = 'authController/adminLogout';
 // admin dashboard Routes
 $route['admin'] = 'admin/dashboard';
 $route['admin/post/list'] = 'admin/PostController/listPost';
+$route['admin/post/category/(:any)'] = 'admin/PostController/listPostByCategory/$1';

@@ -26,8 +26,8 @@ class PostController extends CI_Controller{
 	{
 		$data['page_name'] = "Kategori ".$category;
 		
-		$data['post']      = $this->PostModel->getList($category);
-		$data['category']  = $this->PostModel->getCategory();
+		$data['posts']      = $this->PostModel->getList($category);
+		$data['categories']  = $this->PostModel->getCategory();
 		
 		$this->load->view('admin/post/list',$data);
 	}

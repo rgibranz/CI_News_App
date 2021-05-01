@@ -25,8 +25,9 @@
 												Category
 											</button>
 											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item" href="<?= site_url(); ?>admin/post/list">all</a>
 												<?php foreach($categories as $category):?>
-													<a class="dropdown-item" href="#"><?= $category->category ?></a>
+													<a class="dropdown-item" href="<?= site_url()?>admin/post/category/<?= $category->category ?>"><?= $category->category ?></a>
 												<?php endforeach ?>
 											</div>
 										</div>
@@ -47,7 +48,7 @@
 												<tbody>
 													<?php foreach($posts as $post ):?>
 													<tr>
-														<td><?= $post->id ?></td>
+														<td><?= $post->post_id ?></td>
 														<td><?= $post->title ?></td>
 														<td><?= $post->image ?></td>
 														<td><?= $post->created_at ?></td>
