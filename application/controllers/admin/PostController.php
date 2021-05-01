@@ -8,9 +8,8 @@ class PostController extends CI_Controller{
 
 		$this->load->model('admin/PostModel','PostModel');
 
-        if($this->session->userdata('login')=='admin'){
-			redirect( "admin/login" );
-			$this->session->set_flashdata( 'login'!='not login' );
+        if($this->session->userdata('status') != "admin"){
+			redirect('admin/login');
 		}
     }
 

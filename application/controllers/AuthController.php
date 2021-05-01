@@ -30,20 +30,18 @@ class AuthController extends CI_Controller
         $auth = $this->AuthModel->adminAuth($where)->num_rows();
 
         if ($auth > 0) {
-            $userdata = [
-                'login' => 'admin',
+            $userdata = array(
                 'username' => $username,
-                'password' => $password
-            ];
+                'password' => $password,
+				'status' => 'admin',
+			);
 
             $this->session->set_userdata($userdata);
             $this->session->set_flashdata('login', 'success');
 
             redirect('admin');
         } else {
-            $this->session->set_flashdata('login', 'failed');
-
-            redirect('admin/login');
+           echo 'salah';
         }
     }
 
