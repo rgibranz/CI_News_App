@@ -10,8 +10,15 @@ class PostModel extends CI_Model {
 			return $this->db->where('category',$category)->get('post')->result();
 		}
 	}
+
 	Public function getCategory()
 	{
 		return $this->db->get('category')->result();
 	}
+
+	public function savePost($data)
+	{
+		$this->db->insert('post', $data);
+	}
+
 }

@@ -18,7 +18,11 @@
 							<div class="col-lg-12">
 								<div class="card mb-4">
 									<div class="card-header">
-										
+										<?php if ($this->session->flashdata('post') == 'add'): ?>
+											<div class="alert alert-success" role="alert">
+											  Data Berhasil Di tambahkan
+											</div>
+										<?php endif ?>
 										<h6 class="m-0 font-weight-bold text-primary float-left my-auto">Kelola Data Petugas</h6>
 										<div class="dropdown float-right">
 											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
