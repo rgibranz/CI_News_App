@@ -10,8 +10,8 @@
 				</a>
 				<div class="collapse" id="post" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
-						<a class="nav-link" href="layout-static.html">List Post</a>
-						<a class="nav-link" href="layout-sidenav-light.html">Add Post</a>
+						<a class="nav-link" href="<?= site_url() ?>admin/post/list">List Post</a>
+						<a class="nav-link" href="<?= site_url()?>admin/post/add">Add Post</a>
 					</nav>
 				</div>
 
