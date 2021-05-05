@@ -65,3 +65,5 @@ $route['admin/post/add'] = 'admin/PostController/addPost/';
 $route['admin/post/save'] = 'admin/PostController/savePost/';
 $route['admin/addcategory'] = 'admin/PostController/addCategory';
 $route['admin/post/delete/(:any)'] = 'admin/PostController/deletePost/$1';
+$route['admin/post/edit/(:any)'] = 'admin/PostController/editPost/$1';
+$route['admin/post/update'] = 'admin/PostController/updatePost/';

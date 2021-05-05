@@ -36,4 +36,9 @@ class PostModel extends CI_Model {
 	{
 		$this->db->where($data)->delete('post');
 	}
+
+	public function updatePost($data,$where)
+	{
+		$this->db->where($where)->update('post',$data);
+	}
 }

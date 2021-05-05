@@ -22,6 +22,10 @@
 										<div class="alert alert-success" role="alert">
 											Data Berhasil Di tambahkan
 										</div>
+									<?php elseif ($this->session->flashdata('post') == 'update'): ?>
+									<div class="alert alert-success" role="alert">
+										Data Berhasil Di update
+									</div>
 									<?php endif ?>
 									<h6 class="m-0 font-weight-bold text-primary float-left">Kelola Data Petugas</h6>
 									<div class="row float-right">
@@ -65,9 +69,14 @@
 														<td><?= $post->created_at ?></td>
 														<td><?= $post->updated_at ?></td>
 														<td><?= $post->category ?></td>
-														<td><a href="<?= site_url()?>admin/post/delete/<?= $post->post_id ?>" class="btn btn-danger btn-sm">
+														<td>
+															<a href="<?= site_url()?>admin/post/delete/<?= $post->post_id ?>" class="btn btn-danger btn-sm">
 															Delete
-														</a></td>
+															</a>
+															<a href="<?= site_url()?>admin/post/edit/<?= $post->post_id ?>" class="btn btn-info btn-sm">
+															edit
+															</a>
+														</td>
 													</tr>
 												<?php endforeach?>
 											</tbody>

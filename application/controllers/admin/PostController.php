@@ -80,6 +80,46 @@ class PostController extends CI_Controller{
 		redirect('admin/post/list','refresh');
 	}
 
+	public function editPost($id)
+	{
+		$where = array('post_id' => $id);
+		$data['page_name'] = "Edit Post";
+		$data['post'] = $this->PostModel->getPostByID($id);
+		$data['categories']  = $this->PostModel->getCategory();
+
+		$this->load->view('admin/post/edit',$data);
+	}
+
+	public function updatePost()
+	{
+		$id        = $this->input->post('id');
+		$title     = $this->input->post('title');
+		$slug      = $this->slug($title);
+		$subject   = $this->input->post('subject');
+		if (!empty($_FILES["image"]["name"])) {
+		    $image = $this->imageUpload($slug);
+		} else {
+		    $image = $this->input->post('old_image');
+		}
+		$timestamp = date('Y-m-d H:i:s');
+		$category  = $this->input->post('category');
+
+		$dataInput = array(
+			'title' => $title,
+			'slug' => $slug,
+			'subject' => $subject,
+			'image' => $image,
+			'updated_at' => $timestamp,
+			'category' => $category,
+		);
+
+		$where = array('post_id' => $id);
+
+		$this->PostModel->updatePost($dataInput,$where);
+		$this->session->set_flashdata('post', 'update');
+		redirect('admin/post/list');
+	}
+
 	public function slug($text)
 	{
 		$text = trim($text);
