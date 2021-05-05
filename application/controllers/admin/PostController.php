@@ -70,6 +70,15 @@ class PostController extends CI_Controller{
 		$this->session->set_flashdata('category', 'add');
 		redirect('admin/post/list');
 	}
+	
+	public function deletePost($id)
+	{
+		$where = array('post_id' => $id);
+
+		$this->deleteImage($id);
+		$this->PostModel->destroyPost($where);
+		redirect('admin/post/list','refresh');
+	}
 
 	public function slug($text)
 	{
@@ -81,6 +90,7 @@ class PostController extends CI_Controller{
 	    $text = $text_ori = preg_replace('/\-{2,}/', '-', $text);
 	    return $text;
 	}
+
 
 	public function imageUpload($slug)
 	{
@@ -100,5 +110,14 @@ class PostController extends CI_Controller{
 		{
 			return $this->upload->data("file_name");
 		}
+	}
+
+	public function deleteImage($id)
+	{
+	    $file = $this->PostModel->getPostByID($id);
+	    if ($file->foto != "default.jpg") {
+		    $filename = explode(".", $file->image)[0];
+			return array_map('unlink', glob(FCPATH."assets/upload/images/$filename.*"));
+	    }
 	}
 }

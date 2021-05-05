@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PostModel extends CI_Model {
+
 	Public function getList($category=Null)
 	{
 		if(!isset($category)){
@@ -24,5 +25,15 @@ class PostModel extends CI_Model {
 	public function saveCategory($data)
 	{
 		$this->db->insert('category', $data);
+	}
+
+	public function getPostByID($id)
+	{
+		return $this->db->where('post_id', $id)->get('post')->row();
+	}
+
+	public function destroyPost($data)
+	{
+		$this->db->where($data)->delete('post');
 	}
 }

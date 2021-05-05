@@ -53,6 +53,7 @@
 													<th>Created At</th>
 													<th>Updated At</th>
 													<th>Category</th>
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -64,6 +65,9 @@
 														<td><?= $post->created_at ?></td>
 														<td><?= $post->updated_at ?></td>
 														<td><?= $post->category ?></td>
+														<td><a href="<?= site_url()?>admin/post/delete/<?= $post->post_id ?>" class="btn btn-danger btn-sm">
+															Delete
+														</a></td>
 													</tr>
 												<?php endforeach?>
 											</tbody>
@@ -114,5 +118,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
