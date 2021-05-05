@@ -63,3 +63,4 @@ $route['admin/post/list'] = 'admin/PostController/listPost';
 $route['admin/post/category/(:any)'] = 'admin/PostController/listPostByCategory/$1';
 $route['admin/post/add'] = 'admin/PostController/addPost/';
 $route['admin/post/save'] = 'admin/PostController/savePost/';
+$route['admin/addcategory'] = 'admin/PostController/addCategory';

@@ -21,4 +21,8 @@ class PostModel extends CI_Model {
 		$this->db->insert('post', $data);
 	}
 
+	public function saveCategory($data)
+	{
+		$this->db->insert('category', $data);
+	}
 }

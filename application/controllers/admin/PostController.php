@@ -61,6 +61,16 @@ class PostController extends CI_Controller{
 		redirect('admin/post/list');
 	}
 
+	public function addCategory()
+	{
+		$category = $this->input->post('category');
+		$dataInput = array('category' => $category);
+		
+		$this->PostModel->saveCategory($dataInput);
+		$this->session->set_flashdata('category', 'add');
+		redirect('admin/post/list');
+	}
+
 	public function slug($text)
 	{
 		$text = trim($text);
