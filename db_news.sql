@@ -11,7 +11,7 @@ CREATE TABLE `post` (
 );
 
 CREATE TABLE `category` (
-  `id_category` int PRIMARY KEY AUTO_INCREMENT,
+  `category_id` int PRIMARY KEY AUTO_INCREMENT,
   `category` varchar(255)
 );
 
@@ -23,6 +23,9 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `user` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
+  `first_name` varchar(255),
+  `last_name` varchar(255),
+  `email` varchar(255),
   `username` varchar(255),
   `password` varchar(255)
 );
