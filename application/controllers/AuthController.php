@@ -50,4 +50,52 @@ class AuthController extends CI_Controller
 		$this->session->sess_destroy();
 		redirect('admin/login');
 	}
+
+    public function userRegistration()
+    {
+        $data['page_name'] = "Registration";
+        $this->load->view('user/registration', $data);
+    }
+
+    public function userRegister()
+    {
+        // get user input
+        $username  = $this->input->post('username');
+        $firstName = $this->input->post('firstName');
+        $lastName  = $this->input->post('lastName');
+        $email     = $this->input->post('email');
+        $password  = $this->input->post('password');
+
+        // check username available
+        $usernameCheck = $this->AuthModel->usernameCheck($username);
+        // email check available
+        $emailCheck = $this->AuthModel->emailCheck($email);
+
+        if ($usernameCheck > 0) {
+            // if username is conflict
+            $this->session->set_flashdata('registration', 'username');
+            redirect('register');
+        }else if ($emailCheck > 0) {
+            // if email is conflict
+            $this->session->set_flashdata('registration', 'email');
+            redirect('register');
+        }else{
+            // otherwise the usernames and email don't conflict
+            // make data array
+            $dataRegister = array(
+                'username'   => $username,
+                'first_name' => $firstName,
+                'last_name'  => $lastName,
+                'email'      => $email,
+                'password'   => $password
+            );
+
+            // send data to model
+            $this->AuthModel->userRegister($dataRegister);
+
+            // redirect to login
+            $this->session->set_flashdata('registration', 'success');
+            redirect('login');
+        }
+    }
 }

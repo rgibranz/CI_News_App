@@ -67,3 +67,5 @@ $route['admin/addcategory'] = 'admin/PostController/addCategory';
 $route['admin/post/delete/(:any)'] = 'admin/PostController/deletePost/$1';
 $route['admin/post/edit/(:any)'] = 'admin/PostController/editPost/$1';
 $route['admin/post/update'] = 'admin/PostController/updatePost/';
+$route['register'] = 'authController/userRegistration';
+$route['registration'] = 'authController/userRegister';
