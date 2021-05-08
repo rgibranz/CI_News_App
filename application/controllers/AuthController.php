@@ -46,7 +46,7 @@ class AuthController extends CI_Controller
     }
 
 	public function adminLogout()
-	{		
+	{
 		$this->session->sess_destroy();
 		redirect('admin/login');
 	}
@@ -97,5 +97,46 @@ class AuthController extends CI_Controller
             $this->session->set_flashdata('registration', 'success');
             redirect('login');
         }
+    }
+
+    public function userLogin()
+    {
+        $data['page_name'] = "user Login";
+
+        $this->load->view('user/login', $data);
+    }
+
+    public function userAuth()
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $where = [
+            'username' => $username,
+            'password' => $password
+        ];
+
+        $auth = $this->AuthModel->userAuth($where)->num_rows();
+
+        if ($auth > 0) {
+            $userdata = array(
+                'username' => $username,
+                'password' => $password,
+                'status' => 'user',
+            );
+
+            $this->session->set_userdata($userdata);
+            $this->session->set_flashdata('login', 'success');
+
+            redirect('');
+        } else {
+           echo 'salah';
+        }
+    }
+
+    public function userLogout()
+    {
+        $this->session->sess_destroy();
+        redirect('login');
     }
 }

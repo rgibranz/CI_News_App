@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class AuthModel extends CI_Model {
 
+	// admin auth
 	public function adminAuth($where)
 	{
 		return $this->db->where($where)->get('admin');
@@ -22,6 +23,11 @@ class AuthModel extends CI_Model {
 	public function userRegister($data)
 	{
 		$this->db->insert('user', $data);
+	}
+
+	public function userAuth($where)
+	{
+		return $this->db->where($where)->get('user');
 	}
 }
 
