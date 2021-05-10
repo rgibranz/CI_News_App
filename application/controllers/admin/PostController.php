@@ -136,7 +136,7 @@ class PostController extends CI_Controller{
 	{
 		$config['upload_path']          = './assets/upload/images/';
 		$config['allowed_types']        = 'gif|jpg|png';
-		$config['file_name']            = $slug.date('Y-m-d'); 
+		$config['file_name']            = 'assets/upload/images'.$slug.date('Y-m-d'); 
 		// $config['max_size']             = 100;
 		// $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
