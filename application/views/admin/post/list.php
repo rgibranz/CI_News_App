@@ -65,7 +65,7 @@
 													<tr>
 														<td><?= $post->post_id ?></td>
 														<td><?= $post->title ?></td>
-														<td><?= $post->image ?></td>
+														<td><img src="<?= site_url('').$post->image ?>" alt="" width="200"></td>
 														<td><?= $post->created_at ?></td>
 														<td><?= $post->updated_at ?></td>
 														<td><?= $post->category ?></td>
