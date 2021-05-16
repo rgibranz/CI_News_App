@@ -6,7 +6,7 @@ class PostController extends CI_Controller{
     {
         parent::__construct();
 
-		$this->load->model('admin/PostModel','PostModel');
+		$this->load->model('PostModel');
 
         if($this->session->userdata('status') != "admin"){
 			redirect('admin/login');
