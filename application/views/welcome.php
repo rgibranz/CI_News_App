@@ -52,11 +52,11 @@
                                 <a href="index.html"><img src="<?= base_url('') ?>assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
-                        <div class="col-xl-9 col-lg-9 col-md-9">
+                        <!-- <div class="col-xl-9 col-lg-9 col-md-9">
                             <div class="header-banner f-right ">
                                 <img src="<?= base_url('') ?>assets/img/hero/header_card.jpg" alt="">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -58,15 +58,15 @@ $route['admin/login'] = 'authController/adminLogin';
 $route['admin/auth'] = 'authController/adminAuth';
 $route['admin/logout'] = 'authController/adminLogout';
 // admin dashboard Routes
-$route['admin'] = 'admin/dashboard';
-$route['admin/post/list'] = 'admin/PostController/listPost';
-$route['admin/post/category/(:any)'] = 'admin/PostController/listPostByCategory/$1';
-$route['admin/post/add'] = 'admin/PostController/addPost/';
-$route['admin/post/save'] = 'admin/PostController/savePost/';
-$route['admin/addcategory'] = 'admin/PostController/addCategory';
-$route['admin/post/delete/(:any)'] = 'admin/PostController/deletePost/$1';
-$route['admin/post/edit/(:any)'] = 'admin/PostController/editPost/$1';
-$route['admin/post/update'] = 'admin/PostController/updatePost/';
+$route['admin'] = 'dashboard';
+$route['admin/post/list'] = 'PostController/listPost';
+$route['admin/post/category/(:any)'] = 'PostController/listPostByCategory/$1';
+$route['admin/post/add'] = 'PostController/addPost/';
+$route['admin/post/save'] = 'PostController/savePost/';
+$route['admin/addcategory'] = 'PostController/addCategory';
+$route['admin/post/delete/(:any)'] = 'PostController/deletePost/$1';
+$route['admin/post/edit/(:any)'] = 'PostController/editPost/$1';
+$route['admin/post/update'] = 'PostController/updatePost/';
 
 // user Login Routes
 $route['login'] = 'authController/userLogin';
