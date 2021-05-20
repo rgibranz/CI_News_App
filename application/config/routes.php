@@ -74,3 +74,7 @@ $route['auth'] = 'authController/userAuth';
 $route['logout'] = 'authController/userLogout';
 $route['register'] = 'authController/userRegistration';
 $route['registration'] = 'authController/userRegister';
+
+// home controller
+$route['pages'] = 'HomeController/index' ;
+$route['pages/(:any)'] = 'HomeController/index/$1' ;
