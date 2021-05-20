@@ -78,3 +78,4 @@ $route['registration'] = 'authController/userRegister';
 // home controller
 $route['pages'] = 'HomeController/index' ;
 $route['pages/(:any)'] = 'HomeController/index/$1' ;
+$route['post/(:any)'] = 'HomeController/post/$1' ;

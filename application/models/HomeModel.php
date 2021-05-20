@@ -13,6 +13,11 @@ class HomeModel extends CI_Model {
 		return $this->db->get('post')->num_rows();
 	}
 
+	public function getPost($slug)
+	{
+		return $this->db->where('slug',$slug)->get('post')->row();
+	}
+
 }
 
 /* End of file HomeModel.php */

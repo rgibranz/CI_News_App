@@ -42,6 +42,7 @@ class HomeController extends CI_Controller {
 		$from = $this->uri->segment(3);
 		$this->pagination->initialize($config);		
 
+
 		$data['posts'] = $this->HomeModel->postList($config['per_page'],$from);
 		$this->load->view('welcome',$data);
 	}
@@ -56,6 +57,15 @@ class HomeController extends CI_Controller {
 	{
 		$data['page_name'] = 'contact';
 		$this->load->view('contact', $data);
+	}
+
+	public function post($slug)
+	{
+		
+		$data['post'] = $this->HomeModel->getPost($slug);
+		
+		$data['page_name'] = 'contact';
+		$this->load->view('post', $data);
 	}
 	
 }
