@@ -8,6 +8,7 @@ class HomeController extends CI_Controller {
 		parent::__construct();
 		//Do your magic here
 		$this->load->model('HomeModel');
+		$this->load->model('CommentModel');
 	}
 
 	public function index()
@@ -63,7 +64,7 @@ class HomeController extends CI_Controller {
 	{
 		
 		$data['post'] = $this->HomeModel->getPost($slug);
-		
+		$data['comments'] =$this->CommentModel->getCommentByPost($data['post']->post_id);
 		$data['page_name'] = 'contact';
 		$this->load->view('post', $data);
 	}

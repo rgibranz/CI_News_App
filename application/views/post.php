@@ -62,6 +62,22 @@
             </div>
         </article>
         <hr />
+        <div class="comment">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <?php foreach ($comments as $comment): ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-subtitle mb-2 text-muted">@1</h5>
+                                    <p class="card-text"><?= $comment->subject?></p>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer-->
         <footer>
             <div class="container">
